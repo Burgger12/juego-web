@@ -1,22 +1,24 @@
 let yN = 0;
 
 //movimiento/ generar nueve
-function nube(){
-    var maxX = 98;
+function nube(y){
+    var maxX = 100;
     var minX = 1;
     x = Math.floor(Math.random() * (maxX - minX  + 1)) + minX;
-
-    document.getElementById("nube").style.left = (x + "%");
+    document.getElementById("nube").style.marginTop = (y + "%");
+    document.getElementById("nube").style.marginLeft = (x + "%");
 };
 function movimientoNube(){
     yN++;
-    if(yN < 85){
-        document.getElementById("nube").style.top = (yN + "%");
-    }
-    else{
-        yN = 0;
-        nube()
-    }
-    return 0;
+    nube(yN);
+
 }
-setInterval('movimientoNube()',50);
+setInterval('movimientoNube()',1000);
+
+var teclaDerecha;
+var teclaIzquierda;
+var teclaAtras;
+var telcaAdelante;
+var teclaDisparo
+
+ teclaDerecha = juego.input.keyboard.addKey(Pasher.keyboard.RIGHT);
