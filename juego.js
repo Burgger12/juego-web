@@ -17,6 +17,6 @@ function movimientoNube(){
         yN = 0;
         nube()
     }
-    
+    return 0;
 }
 setInterval('movimientoNube()',50);
