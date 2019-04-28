@@ -4,7 +4,7 @@ var player = {
 };
 //movimiento 
 var teclado ={};
-
+var flag = false;
 function agregarEventosTeclado(){
     agregarEvento(document,"keydown",function(e){
         teclado[e.keyCode] = true;
@@ -37,7 +37,13 @@ function moverNave(){
     }
 
     if(teclado[32]){
-        disparo(); 
+        if(!flag){
+            disparo();
+            flag = true;
+        }
+    }
+    else{
+        flag = false;
     }
 }
 
